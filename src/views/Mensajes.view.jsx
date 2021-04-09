@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Modal from '../components/Modal/Modal.component';
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
-import { borrarMensaje, crearMensaje, leerMensaje, vaciarMensajes } from '../index';
+import { borrarMensaje, crearMensaje, leerMsj, vaciarMensajes } from '../index';
   // Nos suscribimos a cada cambio que reciba el estado
   //store.subscribe(() => {
   //  console.log('🗨 El nuevo estado de nuestra aplicación es... ');
@@ -36,9 +36,9 @@ export default function Mensajes(props){
       
     let eliminarMensaje = (index) => { dispatch(borrarMensaje(index)); };
     
-    let leerMensaje = (index) => { dispatch(leerMensaje(index)); };
+    let leerMensaje = (index) => { dispatch(leerMsj(index)); };
 
-    let setShow = () => { setShowModal(!showModal); }
+    let setShow = () => { setShowModal(!showModal); };
 
     const validaciones = Yup.object().shape({
         nombre: Yup.string()

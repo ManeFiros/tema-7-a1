@@ -1,12 +1,10 @@
 import { Formik } from 'formik';
-import React,{ useRef } from 'react';
+import React from 'react';
 import './Modal.component.scss';
-import ReactTooltip from 'react-tooltip';
 import MensajeValidacion from '../MensajeValidacion/MensajeValidacion.component';
 
 const Modal = ({ handleClose, show, children, onSubmit, validaciones }) => {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
-    let nombreRef = React.createRef();
     let initialValues = { nombre: '', descripcion: '', mail: '' };
 
     return (<div className={showHideClassName}>
@@ -22,12 +20,6 @@ const Modal = ({ handleClose, show, children, onSubmit, validaciones }) => {
                                         name="nombre" 
                                         onChange={handleChange} 
                                         value={values.nombre} 
-                                        /*data-tip={errors.nombre}   
-                                        ref ={nombreRef}
-                                        data-for='nombreTip'<ReactTooltip id='nombreTip'
-                                        type="error" globalEventOff="click" effect="solid" 
-                                        show="true" eventOff="dblclick" 
-                                        (ReactTooltip.show(nombreRef))/>*/
                                 />                                
                                 <input className="Elemento" placeholder="Introduce el mail..." type="text"
                                         name="mail" 

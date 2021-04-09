@@ -29,7 +29,7 @@ import { createStore } from 'redux';
     }
   }
   
-  export const leerMensaje = (index) => {
+  export const leerMsj = (index) => {
     return {
       type: 'LEER_MENSAJES',
       payload: index
